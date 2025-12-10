@@ -1,0 +1,72 @@
+<svg width="1200" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a365d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2c5282;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Circuit pattern definition -->
+    <pattern id="circuitPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="2" fill="#4299e1" opacity="0.3"/>
+      <line x1="5" y1="5" x2="35" y2="5" stroke="#4299e1" stroke-width="1" opacity="0.2"/>
+      <circle cx="35" cy="5" r="2" fill="#4299e1" opacity="0.3"/>
+      <circle cx="35" cy="35" r="2" fill="#4299e1" opacity="0.3"/>
+      <line x1="35" y1="5" x2="35" y2="35" stroke="#4299e1" stroke-width="1" opacity="0.2"/>
+      <circle cx="5" cy="35" r="2" fill="#4299e1" opacity="0.3"/>
+      <line x1="5" y1="35" x2="35" y2="35" stroke="#4299e1" stroke-width="1" opacity="0.2"/>
+      <line x1="5" y1="5" x2="5" y2="35" stroke="#4299e1" stroke-width="1" opacity="0.2"/>
+    </pattern>
+  </defs>
+
+  <!-- Main background -->
+  <rect width="1200" height="400" fill="url(#bgGradient)"/>
+
+  <!-- Circuit pattern overlay -->
+  <rect width="1200" height="400" fill="url(#circuitPattern)"/>
+
+  <!-- Top decoration lines -->
+  <polyline points="0,50 150,50 150,80 300,80" fill="none" stroke="#4299e1" stroke-width="2" opacity="0.5"/>
+  <polyline points="900,50 1050,50 1050,80 1200,80" fill="none" stroke="#4299e1" stroke-width="2" opacity="0.5"/>
+
+  <!-- Bottom decoration lines -->
+  <polyline points="100,350 250,350 250,320 400,320" fill="none" stroke="#4299e1" stroke-width="2" opacity="0.5"/>
+  <polyline points="800,350 950,350 950,320 1100,320" fill="none" stroke="#4299e1" stroke-width="2" opacity="0.5"/>
+
+  <!-- Main title background card -->
+  <rect x="300" y="140" width="600" height="120" rx="10" fill="#1a365d" opacity="0.8"/>
+
+  <!-- Main title -->
+  <text x="600" y="200" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle">
+    PeakRDL
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="240" font-family="Arial, sans-serif" font-size="36" fill="#4299e1" text-anchor="middle">
+    寄存器描述语言工具指南
+  </text>
+
+  <!-- Register diagram decoration -->
+  <g transform="translate(50, 180)">
+    <rect x="0" y="0" width="160" height="40" fill="none" stroke="#48bb78" stroke-width="2" opacity="0.7"/>
+    <line x1="40" y1="0" x2="40" y2="40" stroke="#48bb78" stroke-width="1" opacity="0.7"/>
+    <line x1="80" y1="0" x2="80" y2="40" stroke="#48bb78" stroke-width="1" opacity="0.7"/>
+    <line x1="120" y1="0" x2="120" y2="40" stroke="#48bb78" stroke-width="1" opacity="0.7"/>
+    <text x="20" y="25" font-family="Arial" font-size="10" fill="#48bb78" text-anchor="middle">EN</text>
+    <text x="60" y="25" font-family="Arial" font-size="10" fill="#48bb78" text-anchor="middle">MODE</text>
+    <text x="100" y="25" font-family="Arial" font-size="10" fill="#48bb78" text-anchor="middle">RSRV</text>
+    <text x="140" y="25" font-family="Arial" font-size="10" fill="#48bb78" text-anchor="middle">DATA</text>
+  </g>
+
+  <!-- Code decoration -->
+  <g transform="translate(950, 170)">
+    <rect x="0" y="0" width="200" height="60" fill="#1a365d" opacity="0.6" rx="5"/>
+    <text x="10" y="20" font-family="monospace" font-size="12" fill="#4299e1">addrmap my_regmap {</text>
+    <text x="20" y="35" font-family="monospace" font-size="12" fill="#4299e1">reg control @0x00;</text>
+    <text x="20" y="50" font-family="monospace" font-size="12" fill="#4299e1">reg status @0x04;</text>
+  </g>
+
+  <!-- Binary code decoration at bottom -->
+  <text x="100" y="380" font-family="monospace" font-size="14" fill="#4299e1" opacity="0.4">01100101 01101110 01110010 01111001</text>
+  <text x="700" y="380" font-family="monospace" font-size="14" fill="#4299e1" opacity="0.4">01001000 01000111 01100101 01101110</text>
+</svg>

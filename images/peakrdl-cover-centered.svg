@@ -1,0 +1,157 @@
+<svg width="1200" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#334155;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Center dark gradient for text readability -->
+    <radialGradient id="centerDark" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:0.95" />
+      <stop offset="70%" style="stop-color:#1e293b;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#334155;stop-opacity:0.3" />
+    </radialGradient>
+
+    <!-- Circuit pattern -->
+    <pattern id="circuitPattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="3" fill="#3b82f6" opacity="0.4"/>
+      <line x1="10" y1="10" x2="50" y2="10" stroke="#3b82f6" stroke-width="1.5" opacity="0.3"/>
+      <circle cx="50" cy="10" r="3" fill="#3b82f6" opacity="0.4"/>
+      <circle cx="50" cy="50" r="3" fill="#3b82f6" opacity="0.4"/>
+      <line x1="50" y1="10" x2="50" y2="50" stroke="#3b82f6" stroke-width="1.5" opacity="0.3"/>
+      <circle cx="10" cy="50" r="3" fill="#3b82f6" opacity="0.4"/>
+      <line x1="10" y1="50" x2="50" y2="50" stroke="#3b82f6" stroke-width="1.5" opacity="0.3"/>
+      <line x1="10" y1="10" x2="10" y2="50" stroke="#3b82f6" stroke-width="1.5" opacity="0.3"/>
+    </pattern>
+
+    <!-- Glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Main background -->
+  <rect width="1200" height="400" fill="url(#bgGradient)"/>
+
+  <!-- Circuit pattern overlay -->
+  <rect width="1200" height="400" fill="url(#circuitPattern)"/>
+
+  <!-- Center dark area for text readability -->
+  <ellipse cx="600" cy="200" rx="500" ry="180" fill="url(#centerDark)"/>
+
+  <!-- Top left: PeakRDL logo text -->
+  <g transform="translate(80, 60)">
+    <rect x="0" y="0" width="200" height="50" rx="5" fill="#1e293b" opacity="0.8"/>
+    <text x="100" y="32" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#3b82f6" text-anchor="middle" filter="url(#glow)">
+      PeakRDL
+    </text>
+  </g>
+
+  <!-- Top right: SystemRDL tag -->
+  <g transform="translate(920, 60)">
+    <rect x="0" y="0" width="200" height="50" rx="20" fill="#1e293b" stroke="#3b82f6" stroke-width="2" opacity="0.8"/>
+    <text x="100" y="32" font-family="Arial, sans-serif" font-size="18" fill="#60a5fa" text-anchor="middle">
+      SystemRDL
+    </text>
+  </g>
+
+  <!-- Bottom left: Register diagram -->
+  <g transform="translate(80, 300)">
+    <text x="0" y="0" font-family="monospace" font-size="12" fill="#94a3b8">Register Map:</text>
+    <!-- 32-bit register visualization -->
+    <g transform="translate(0, 10)">
+      <rect x="0" y="0" width="240" height="40" fill="none" stroke="#10b981" stroke-width="2" opacity="0.7"/>
+      <!-- Bit fields -->
+      <rect x="0" y="0" width="30" height="40" fill="#10b981" opacity="0.2"/>
+      <rect x="30" y="0" width="60" height="40" fill="#10b981" opacity="0.2"/>
+      <rect x="90" y="0" width="90" height="40" fill="#10b981" opacity="0.2"/>
+      <rect x="180" y="0" width="60" height="40" fill="#10b981" opacity="0.2"/>
+      <!-- Field separators -->
+      <line x1="30" y1="0" x2="30" y2="40" stroke="#10b981" stroke-width="1" opacity="0.8"/>
+      <line x1="90" y1="0" x2="90" y2="40" stroke="#10b981" stroke-width="1" opacity="0.8"/>
+      <line x1="180" y1="0" x2="180" y2="40" stroke="#10b981" stroke-width="1" opacity="0.8"/>
+      <!-- Bit labels -->
+      <text x="15" y="25" font-family="monospace" font-size="10" fill="#10b981" text-anchor="middle">EN</text>
+      <text x="60" y="25" font-family="monospace" font-size="10" fill="#10b981" text-anchor="middle">MODE</text>
+      <text x="135" y="25" font-family="monospace" font-size="10" fill="#10b981" text-anchor="middle">RESERVED</text>
+      <text x="210" y="25" font-family="monospace" font-size="10" fill="#10b981" text-anchor="middle">DATA</text>
+      <!-- Bit numbers -->
+      <text x="15" y="55" font-family="monospace" font-size="8" fill="#64748b" text-anchor="middle">31</text>
+      <text x="30" y="55" font-family="monospace" font-size="8" fill="#64748b" text-anchor="middle">27</text>
+      <text x="90" y="55" font-family="monospace" font-size="8" fill="#64748b" text-anchor="middle">21</text>
+      <text x="180" y="55" font-family="monospace" font-size="8" fill="#64748b" text-anchor="middle">10</text>
+      <text x="225" y="55" font-family="monospace" font-size="8" fill="#64748b" text-anchor="middle">0</text>
+    </g>
+  </g>
+
+  <!-- Bottom right: Code snippet -->
+  <g transform="translate(820, 300)">
+    <text x="0" y="0" font-family="monospace" font-size="12" fill="#94a3b8">SystemRDL Code:</text>
+    <rect x="0" y="10" width="300" height="70" rx="5" fill="#0f172a" opacity="0.9" stroke="#3b82f6" stroke-width="1"/>
+    <text x="10" y="30" font-family="monospace" font-size="11" fill="#60a5fa">addrmap design {</text>
+    <text x="20" y="45" font-family="monospace" font-size="11" fill="#34d399">reg ctrl_reg @0x00 {</text>
+    <text x="30" y="60" font-family="monospace" font-size="11" fill="#fbbf24">field { rw; } enable[1:0];</text>
+    <text x="30" y="75" font-family="monospace" font-size="11" fill="#fbbf24">field { r; } status;</text>
+  </g>
+
+  <!-- Decorative elements around center -->
+  <!-- Left side decoration -->
+  <g opacity="0.5">
+    <path d="M 50 200 L 150 150 L 150 250 Z" fill="#3b82f6" opacity="0.2"/>
+    <path d="M 100 200 L 200 170 L 200 230 Z" fill="#10b981" opacity="0.2"/>
+  </g>
+
+  <!-- Right side decoration -->
+  <g opacity="0.5">
+    <path d="M 1150 200 L 1050 150 L 1050 250 Z" fill="#3b82f6" opacity="0.2"/>
+    <path d="M 1100 200 L 1000 170 L 1000 230 Z" fill="#10b981" opacity="0.2"/>
+  </g>
+
+  <!-- Top floating binary code -->
+  <g opacity="0.3">
+    <text x="200" y="30" font-family="monospace" font-size="10" fill="#3b82f6">01101110</text>
+    <text x="400" y="25" font-family="monospace" font-size="10" fill="#3b82f6">01001000</text>
+    <text x="600" y="30" font-family="monospace" font-size="10" fill="#3b82f6">01100101</text>
+    <text x="800" y="25" font-family="monospace" font-size="10" fill="#3b82f6">01101110</text>
+  </g>
+
+  <!-- Bottom binary code -->
+  <g opacity="0.3">
+    <text x="350" y="380" font-family="monospace" font-size="10" fill="#3b82f6">01000111</text>
+    <text x="550" y="385" font-family="monospace" font-size="10" fill="#3b82f6">01100101</text>
+    <text x="750" y="380" font-family="monospace" font-size="10" fill="#3b82f6">01101110</text>
+  </g>
+
+  <!-- Corner decorations -->
+  <!-- Top left corner -->
+  <path d="M 0 0 L 100 0 L 0 100 Z" fill="#1e293b" opacity="0.3"/>
+  <path d="M 0 0 L 50 0 L 0 50 Z" fill="#3b82f6" opacity="0.2"/>
+
+  <!-- Top right corner -->
+  <path d="M 1200 0 L 1100 0 L 1200 100 Z" fill="#1e293b" opacity="0.3"/>
+  <path d="M 1200 0 L 1150 0 L 1200 50 Z" fill="#3b82f6" opacity="0.2"/>
+
+  <!-- Bottom left corner -->
+  <path d="M 0 400 L 100 400 L 0 300 Z" fill="#1e293b" opacity="0.3"/>
+  <path d="M 0 400 L 50 400 L 0 350 Z" fill="#3b82f6" opacity="0.2"/>
+
+  <!-- Bottom right corner -->
+  <path d="M 1200 400 L 1100 400 L 1200 300 Z" fill="#1e293b" opacity="0.3"/>
+  <path d="M 1200 400 L 1150 400 L 1200 350 Z" fill="#3b82f6" opacity="0.2"/>
+
+  <!-- Subtle grid overlay -->
+  <g opacity="0.1">
+    <line x1="300" y1="0" x2="300" y2="400" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="600" y1="0" x2="600" y2="400" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="900" y1="0" x2="900" y2="400" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="0" y1="100" x2="1200" y2="100" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="0" y1="200" x2="1200" y2="200" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="0" y1="300" x2="1200" y2="300" stroke="#3b82f6" stroke-width="0.5"/>
+  </g>
+</svg>
